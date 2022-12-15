@@ -57060,23 +57060,28 @@ const int MAX_LENGTH = 50;
 int main(int argc, char *argv[]) {
     srand(time(NULL));
     bool upper = false;
-    int limit = MAX_LENGTH-1;
+    int high = MAX_LENGTH-1;
+    int low = 2;
+    int max = 10;
     int c;
-    while((c = getopt(argc, argv, "ul:")) != -1) {
+    while((c = getopt(argc, argv, "ul:h:n:")) != -1) {
         switch(c) {
             case 'u': upper = true; break;
-            case 'l': limit = atoi(optarg); break;
+            case 'l': low = atoi(optarg); break;
+            case 'h': high = atoi(optarg); break;
+            case 'n': max = atoi(optarg); break;
         }
     }
     if(argc > 1 && !strcmp(argv[1],"-u"))
         upper = true;
-    for(int i=0; i<MAX_WORD; i++) {
+    for(int i=0; i<max;) {
         int j = rand() % MAX_WORD;
         char word[MAX_LENGTH];
         memset(word, 0, MAX_LENGTH);
         strcpy(word, words[j]);
-        if(strlen(word) > limit)
+        if(strlen(word) > high || strlen(word) < low)
             continue;
+        i++;
         if(upper)
             for(int c=0; c<strlen(word); c++) {
                 word[c] = toupper(word[c]);
