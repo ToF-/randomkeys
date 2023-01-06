@@ -28,15 +28,15 @@ int main(int argc, char *argv[]) {
     }
     srand(time(NULL));
     bool upper = false;
-    int high = MAX_LENGTH-1;
     int letters = 2;
     int size = 10;
     int c;
-    while((c = getopt(argc, argv, "ul:h:s:")) != -1) {
+    while((c = getopt(argc, argv, "ul:hs:")) != -1) {
         switch(c) {
             case 'u': upper = true; break;
             case 'l': letters = atoi(optarg); break;
-            case 'h': high = atoi(optarg); break;
+            case 'h': printf("randomkeys -u : upper\n\t   -l <#letters>\n\t   -s <size>");
+                      exit(0);
             case 's': size = atoi(optarg); break;
         }
     }
