@@ -46,15 +46,16 @@ int main(int argc, char *argv[]) {
         int j = rand() % max_word;
         memset(word, 0, MAX_LENGTH);
         strcpy(word, Words[j]);
-        if(strlen(word) > size || strlen(word) < letters)
+        if(strlen(word) > size || strlen(word) < letters) {
             continue;
+        }
         if(upper)
             for(int c=0; c<strlen(word); c++) {
                 word[c] = toupper(word[c]);
             }
-            for(int c=strlen(word); c<size; c++) {
-                word[c] = (rand() % 10) + '0';
-            }
+        for(int c=strlen(word); c<size; c++) {
+            word[c] = (rand() % 10) + '0';
+        }
         printf("%s\n", word);
     }
     for(int i=0; i < max_word; i++) {
