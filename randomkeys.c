@@ -8,8 +8,8 @@
 
 
 const int MAX_LENGTH = 50;
-const int MAX_WORD = 60000;
-char *Words[MAX_WORD];
+#define MAX_WORD (60000)
+static char *Words[MAX_WORD];
 
 int main(int argc, char *argv[]) {
     const char *ukwords_path = getenv("UKWORDS");
