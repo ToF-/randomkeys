@@ -40335,7 +40335,6 @@ recruiting
 recruitment
 recruits
 recrystallisation
-rectal
 rectangle
 rectangles
 rectangular
@@ -40352,8 +40351,6 @@ recto
 rector
 rectors
 rectory
-rectum
-rectums
 recumbent
 recuperate
 recuperated
